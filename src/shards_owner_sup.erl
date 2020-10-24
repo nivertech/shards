@@ -158,7 +158,7 @@ parse_opts([Opt | Opts], #{opts := NOpts} = Acc) ->
 
 %% @private
 maybe_init_shards_dist(Tab, shards_dist) ->
-  ok = pg2:create(Tab),
-  ok = pg2:join(Tab, self());
+  %ok = pg2:create(Tab),
+  ok = pg:join(Tab, self());
 maybe_init_shards_dist(_, _) ->
   ok.
